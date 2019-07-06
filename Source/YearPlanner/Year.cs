@@ -19,11 +19,10 @@ namespace YearPlanner
                     _months = new Dictionary<int, Month>();
                     for (var i = 1; i <= 12; i++)
                     {
-                        var month = new Month(i);
+                        var month = new Month(this, i);
                         _months.Add(i, month);
                     }
                 }
-
                 return _months.Values.ToList();
             }
         } 
