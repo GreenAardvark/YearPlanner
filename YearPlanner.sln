@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{3C6AF5BE-2267-48DE-B255-533C1CFABB42}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9707F5FD-720A-4234-A793-70067B2AE219}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YearPlanner", "Source\YearPlanner\YearPlanner.csproj", "{CE06EAD3-8866-4E70-924A-F4D42F145C94}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YearPlanner.EndToEnd.Tests", "Tests\YearPlanner.EndToEnd.Tests\YearPlanner.EndToEnd.Tests.csproj", "{9CBA60C4-89DD-4D15-8F54-98C3414A8407}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YearPlanner.IntegrationTests", "Tests\YearPlanner.IntegrationTests\YearPlanner.IntegrationTests.csproj", "{293E3BB0-4A71-4041-A3A3-089A44298957}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YearPlanner.UnitTests", "Tests\YearPlanner.UnitTests\YearPlanner.UnitTests.csproj", "{6A24778C-CCC8-475B-AB13-5ADF54F0D098}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YearPlanner.Web", "Source\YearPlanner.Web\YearPlanner.Web.csproj", "{91218DBA-E800-4926-A10B-8983547F3770}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE06EAD3-8866-4E70-924A-F4D42F145C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE06EAD3-8866-4E70-924A-F4D42F145C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE06EAD3-8866-4E70-924A-F4D42F145C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE06EAD3-8866-4E70-924A-F4D42F145C94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CBA60C4-89DD-4D15-8F54-98C3414A8407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CBA60C4-89DD-4D15-8F54-98C3414A8407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CBA60C4-89DD-4D15-8F54-98C3414A8407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CBA60C4-89DD-4D15-8F54-98C3414A8407}.Release|Any CPU.Build.0 = Release|Any CPU
+		{293E3BB0-4A71-4041-A3A3-089A44298957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{293E3BB0-4A71-4041-A3A3-089A44298957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{293E3BB0-4A71-4041-A3A3-089A44298957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{293E3BB0-4A71-4041-A3A3-089A44298957}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A24778C-CCC8-475B-AB13-5ADF54F0D098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A24778C-CCC8-475B-AB13-5ADF54F0D098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A24778C-CCC8-475B-AB13-5ADF54F0D098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A24778C-CCC8-475B-AB13-5ADF54F0D098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91218DBA-E800-4926-A10B-8983547F3770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91218DBA-E800-4926-A10B-8983547F3770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91218DBA-E800-4926-A10B-8983547F3770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91218DBA-E800-4926-A10B-8983547F3770}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CE06EAD3-8866-4E70-924A-F4D42F145C94} = {3C6AF5BE-2267-48DE-B255-533C1CFABB42}
+		{9CBA60C4-89DD-4D15-8F54-98C3414A8407} = {9707F5FD-720A-4234-A793-70067B2AE219}
+		{293E3BB0-4A71-4041-A3A3-089A44298957} = {9707F5FD-720A-4234-A793-70067B2AE219}
+		{6A24778C-CCC8-475B-AB13-5ADF54F0D098} = {9707F5FD-720A-4234-A793-70067B2AE219}
+		{91218DBA-E800-4926-A10B-8983547F3770} = {3C6AF5BE-2267-48DE-B255-533C1CFABB42}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03F8C621-0D56-4A58-BE60-BCEB9CBF02C2}
+	EndGlobalSection
+EndGlobal
