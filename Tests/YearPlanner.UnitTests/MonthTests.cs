@@ -25,8 +25,17 @@ namespace YearPlanner.UnitTests
         [Fact]
         public void Should_Be_OK_When_Passed_Valid_Month()
         {
-            var month = new Month(new Year(NonLeapYear), 3);
+            var nonLeapYear = new Year(NonLeapYear);
+            var month = new Month( nonLeapYear, 3);
             month.Should().NotBeNull();
+        }
+
+        [Fact]
+        public void Should_Throw_ArgumentNullException_When_Passed_Null_Parent_Year()
+        {
+            Year nullYear = null;
+            Action action = () => new Month(nullYear, 0);
+            action.Should().Throw<ArgumentNullException>();
         }
 
         [Fact]
