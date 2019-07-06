@@ -1,8 +1,23 @@
-﻿@{
+﻿@model IndexViewModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">@Model.YearValue</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    
+    <table id="year-planner">
+        @foreach (var month in Model.Year.Months)
+        {
+            <tr>
+                @foreach (var day in month.Days)
+                {
+                    <td>@day.Value</td>
+                }
+            </tr>
+        }
+    </table>
+
 </div>

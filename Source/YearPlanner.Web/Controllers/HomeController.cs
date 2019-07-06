@@ -12,7 +12,14 @@ namespace YearPlanner.Web.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            var now = DateTime.Now;
+            var year = new Year(now.Year);
+            var vm = new IndexViewModel
+            {
+                YearValue = now.Year,
+                Year = year
+            };
+            return View(vm);
         }
 
         public IActionResult Privacy()
