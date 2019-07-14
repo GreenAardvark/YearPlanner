@@ -11,11 +11,13 @@ namespace YearPlanner
 
         public int Value { get;}
 
+        public string DayOfWeek { get; }
+
         public Day(Month parent, int value)
         {
             if (parent == null) throw new ArgumentNullException(nameof(Year), "Cannot be null.");
             if (value < 1) throw new ArgumentOutOfRangeException(nameof(value),"Value must be higher than 0.");
-            if (value > 31) throw new ArgumentOutOfRangeException(nameof(value),"Value must be lower than or equal to 12.");
+            if (value > 31) throw new ArgumentOutOfRangeException(nameof(value),"Value must be lower than or equal to 31.");
             if (value > 28)
             {
                 var numberOfDaysInMonth = Month.GetNumberOfDaysInMonth(parent.Parent.Value, parent.Value);
@@ -28,6 +30,12 @@ namespace YearPlanner
             
             Parent = parent;
             Value = value;
+        }
+
+        public static string GetDayOfWeek(int year, int month, int day)
+        {
+            DateTime value = new DateTime(year, month, day);
+            return value.ToString("dddd");
         }
     }
 }

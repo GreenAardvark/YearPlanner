@@ -74,5 +74,14 @@ namespace YearPlanner.UnitTests
             Action action = () => new Day(month,32);
             action.Should().Throw<ArgumentOutOfRangeException>();
         }
+
+        [Fact]
+        public void Should_Be_OK_When_Day_Of_Week_Is_Correct()
+        {
+            var year = new Year(NonLeapYear);
+            var month = new Month(year, 7);
+            var day = new Day(month, 14);
+            Day.GetDayOfWeek(year.Value, month.Value, day.Value).Should().Be("Sunday");
+        }
     }
 }
