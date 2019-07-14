@@ -76,11 +76,65 @@ namespace YearPlanner.UnitTests
         }
 
         [Fact]
-        public void Should_Be_OK_When_Day_Of_Week_Is_Correct()
+        public void Should_Be_OK_When_Day_Of_Week_Is_Correct_Monday()
         {
             var year = new Year(NonLeapYear);
             var month = new Month(year, 7);
-            var day = new Day(month, 14);
+            var day = new Day(month, 1);
+            Day.GetDayOfWeek(year.Value, month.Value, day.Value).Should().Be("Monday");
+        }
+
+        [Fact]
+        public void Should_Be_OK_When_Day_Of_Week_Is_Correct_Tuesday()
+        {
+            var year = new Year(NonLeapYear);
+            var month = new Month(year, 7);
+            var day = new Day(month, 16);
+            Day.GetDayOfWeek(year.Value, month.Value, day.Value).Should().Be("Tuesday");
+        }
+
+        [Fact]
+        public void Should_Be_OK_When_Day_Of_Week_Is_Correct_Wednesday()
+        {
+            var year = new Year(NonLeapYear);
+            var month = new Month(year, 7);
+            var day = new Day(month, 3);
+            Day.GetDayOfWeek(year.Value, month.Value, day.Value).Should().Be("Wednesday");
+        }
+
+        [Fact]
+        public void Should_Be_OK_When_Day_Of_Week_Is_Correct_Thursday()
+        {
+            var year = new Year(NonLeapYear);
+            var month = new Month(year, 7);
+            var day = new Day(month, 25);
+            Day.GetDayOfWeek(year.Value, month.Value, day.Value).Should().Be("Thursday");
+        }
+
+        [Fact]
+        public void Should_Be_OK_When_Day_Of_Week_Is_Correct_Friday()
+        {
+            var year = new Year(NonLeapYear);
+            var month = new Month(year, 7);
+            var day = new Day(month, 5);
+            Day.GetDayOfWeek(year.Value, month.Value, day.Value).Should().Be("Friday");
+        }
+
+        [Fact]
+        public void Should_Be_OK_When_Day_Of_Week_Is_Correct_Saturday()
+        {
+            var year = new Year(NonLeapYear);
+            var month = new Month(year, 6);
+            var day = new Day(month, 29);
+            Day.GetDayOfWeek(year.Value, month.Value, day.Value).Should().Be("Saturday");
+        }
+
+        [Fact]
+        public void Should_Be_OK_When_Day_Of_Week_Is_Correct_Sunday()
+        {
+            var year = new Year(NonLeapYear);
+            var month = new Month(year, 8);
+            var day = new Day(month, 18);
             Day.GetDayOfWeek(year.Value, month.Value, day.Value).Should().Be("Sunday");
         }
     }
