@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace YearPlanner
 {
@@ -11,7 +9,7 @@ namespace YearPlanner
 
         public int Value { get;}
 
-        public string DayOfWeek { get; }
+        //public string DayOfWeek { get; }
 
         public Day(Month parent, int value)
         {
@@ -30,12 +28,6 @@ namespace YearPlanner
             
             Parent = parent;
             Value = value;
-        }
-
-        public static string GetDayOfWeek(int year, int month, int day)
-        {
-            DateTime value = new DateTime(year, month, day);
-            return value.ToString("dddd");
         }
     }
 }

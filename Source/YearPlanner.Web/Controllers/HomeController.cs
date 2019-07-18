@@ -14,10 +14,12 @@ namespace YearPlanner.Web.Controllers
         {
             var now = DateTime.Now;
             var year = new Year(now.Year);
+            var offsets = new DayOffsets(year);
             var vm = new IndexViewModel
             {
+                Year = year,
                 YearValue = now.Year,
-                Year = year
+                DayOffsets = offsets
             };
             return View(vm);
         }
