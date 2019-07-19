@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace YearPlanner
 {
@@ -18,7 +16,9 @@ namespace YearPlanner
         public void CalculateDayOffsets()
         {
             var highestSundays = new Dictionary<int, int>();
+            var widestMonths = new Dictionary<int, int>();
 
+            var widestMonth = 0;
             var highestSunday = 0;
             foreach (var month in _year.Months)
             {
@@ -28,15 +28,27 @@ namespace YearPlanner
                     if (dt.DayOfWeek == DayOfWeek.Sunday)
                     {
                         highestSundays.Add(month.Value, day.Value);
+                        widestMonths.Add(month.Value, day.Value);
 
                         if (dt.Day > highestSunday)
                         {
                             highestSunday = dt.Day;
-                        }
 
+                            widestMonth = highestSunday + Month.GetNumberOfDaysInMonth(_year.Value, month.Value);
+                        }
                         break;
                     }
                 }
+            }
+
+            foreach (var kvp in widestMonths)
+            {
+                var month = kvp.Key;
+                var widestMonthsValue = kvp.Value;
+
+                var noDaysInMonth = Month.GetNumberOfDaysInMonth(_year.Value, month);
+
+                _rightOffsets.Add(month, (widestMonth - noDaysInMonth) - (highestSunday - widestMonthsValue));
             }
 
             foreach (var kvp in highestSundays)
@@ -46,7 +58,6 @@ namespace YearPlanner
 
                 _leftOffsets.Add(month, highestSunday - day);
             }
-
         }
 
         public DayOffsets(Year year)

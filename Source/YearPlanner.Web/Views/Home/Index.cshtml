@@ -12,7 +12,7 @@
         @foreach (var month in Model.Year.Months)
         {
             var leftOffset = Model.DayOffsets.LeftOffsets.First(x => x.Key == month.Value).Value;
-            //var rightOffset = Model.DayOffsets.RightOffsets.First(x => x.Key == month.Value).Value;
+            var rightOffset = Model.DayOffsets.RightOffsets.First(x => x.Key == month.Value).Value;
             
             <tr>
                 @for (int i = 0; i < leftOffset; i++)
