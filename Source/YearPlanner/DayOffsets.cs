@@ -15,49 +15,60 @@ namespace YearPlanner
 
         public void CalculateDayOffsets()
         {
-            var highestSundays = new Dictionary<int, int>();
-            var widestMonths = new Dictionary<int, int>();
+            CalculateLeftOffsets();
+            CalculateRightOffsets();
 
-            var widestMonth = 0;
-            var highestSunday = 0;
-            foreach (var month in _year.Months)
-            {
-                foreach (var day in month.Days)
-                {
-                    var dt = new DateTime(_year.Value, month.Value, day.Value);
-                    if (dt.DayOfWeek == DayOfWeek.Sunday)
-                    {
-                        highestSundays.Add(month.Value, day.Value);
-                        widestMonths.Add(month.Value, day.Value);
+            //foreach (var kvp in widestMonths)
+            //{
+            //    var month = kvp.Key;
+            //    var widestMonthsValue = kvp.Value;
 
-                        if (dt.Day > highestSunday)
-                        {
-                            highestSunday = dt.Day;
+            //    var noDaysInMonth = Month.GetNumberOfDaysInMonth(_year.Value, month);
 
-                            widestMonth = highestSunday + Month.GetNumberOfDaysInMonth(_year.Value, month.Value);
-                        }
-                        break;
-                    }
-                }
-            }
+            //    _rightOffsets.Add(month, (widestMonth - noDaysInMonth) - (highestSunday - widestMonthsValue));
+            //}
 
-            foreach (var kvp in widestMonths)
-            {
-                var month = kvp.Key;
-                var widestMonthsValue = kvp.Value;
+            //foreach (var kvp in highestSundays)
+            //{
+            //    var month = kvp.Key;
+            //    var day = kvp.Value;
 
-                var noDaysInMonth = Month.GetNumberOfDaysInMonth(_year.Value, month);
+            //    _leftOffsets.Add(month, highestSunday - day);
+            //}
+        }
 
-                _rightOffsets.Add(month, (widestMonth - noDaysInMonth) - (highestSunday - widestMonthsValue));
-            }
+        private void CalculateRightOffsets()
+        {
+        }
 
-            foreach (var kvp in highestSundays)
-            {
-                var month = kvp.Key;
-                var day = kvp.Value;
+        private void CalculateLeftOffsets()
+        {
+            // First determine the 
+            //var highestSundays = new Dictionary<int, int>();
+            //var widestMonths = new Dictionary<int, int>();
 
-                _leftOffsets.Add(month, highestSunday - day);
-            }
+            //var widestMonth = 0;
+            //var highestSunday = 0;
+            //foreach (var month in _year.Months)
+            //{
+            //    foreach (var day in month.Days)
+            //    {
+            //        var dt = new DateTime(_year.Value, month.Value, day.Value);
+            //        if (dt.DayOfWeek == DayOfWeek.Sunday)
+            //        {
+            //            highestSundays.Add(month.Value, day.Value);
+            //            widestMonths.Add(month.Value, day.Value);
+
+            //            if (dt.Day > highestSunday)
+            //            {
+            //                highestSunday = dt.Day;
+
+            //                widestMonth = highestSunday + Month.GetNumberOfDaysInMonth(_year.Value, month.Value);
+            //            }
+            //            break;
+            //        }
+            //    }
+            //}
         }
 
         public DayOffsets(Year year)
