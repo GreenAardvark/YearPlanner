@@ -10,15 +10,20 @@ namespace YearPlanner.UnitTests
     {
         private const int NonLeapYear = 2019;
 
+        // This is actually an integration test as it tests 2 components working together (Year and DayOffsets).
         [Fact]
         public void Should_Be_OK_When_Passed_Valid_Year()
         {
+            // Arrange...
             var year = new Year(NonLeapYear);
-            
+
+            // Act...
             var dayOffsets = new DayOffsets(year);
 
+            // Assert...
             dayOffsets.LeftOffsets.Should().NotBeNull();
             dayOffsets.RightOffsets.Should().NotBeNull();
+            // Requires more tests!
         }
 
         [Fact]
